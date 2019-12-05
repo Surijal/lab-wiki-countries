@@ -11,10 +11,10 @@ const CountryDetail  = (props) => {
 
     
     const id =  props.match.params.id;
-    console.log('innn' ,id);
+    // console.log('innn' ,id);
 
     const country = getCountryById(id);
-    console.log('innn' ,country);
+    // console.log('innn' ,country);
 
     
 
@@ -46,7 +46,7 @@ const CountryDetail  = (props) => {
                                     {
                                         country.borders.map( border =>{
                                             const countryBorder = getCountryById(border);
-                                            console.log(countryBorder.ccn3, countryBorder.name)
+                                            {/* console.log(countryBorder.ccn3, countryBorder.name) */}
                                             return(
                                                 <Link 
                                                         key={countryBorder.ccn3} 
@@ -70,3 +70,4 @@ const CountryDetail  = (props) => {
 
 
 export default  CountryDetail;
+

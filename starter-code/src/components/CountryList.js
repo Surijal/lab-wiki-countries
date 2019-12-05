@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 
 
 class CountryList extends Component {
@@ -10,10 +12,21 @@ class CountryList extends Component {
         super(props);
 
         this.state = {
-            countryList:  props.countries, 
+            // countryList:  props.countries, 
+            countryList: []
         }
-        console.log('COUNTRIES OBJ', this.state.countryList);
+        // console.log('COUNTRIES OBJ', this.state.countryList);
         
+    }
+
+    componentDidMount(){
+        axios.get("http://localhost:4000/")
+            .then((response)=>{
+                console.log(response.data);
+                
+                this.setState({countryList: response.data})
+            })
+            .catch((err) => console.log(err))
     }
 
     render() {
